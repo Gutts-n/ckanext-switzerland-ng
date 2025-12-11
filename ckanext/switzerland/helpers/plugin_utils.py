@@ -169,7 +169,7 @@ def _prepare_lang_specific_fields_for_indexing(search_data, validated_dict):
         )
         search_data[f"keywords_{lang_code}"] = (
             ogdch_loc_utils.get_localized_value_from_dict(
-                validated_dict["keywords"], lang_code
+                validated_dict.get("keywords", {}), lang_code
             )
         )
         search_data[f"organization_{lang_code}"] = (
